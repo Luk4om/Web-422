@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <form action="#" id="regisForm">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name">
+
+        <div>
+            <label for="gender">Gender:</label>
+            <input type="radio" name="gender" id="male" value="Male">
+            <label for="male">Male</label>
+            <input type="radio" name="gender" id="female" value="Female">
+            <label for="female">Female</label>
+            <hr>
+        </div>
+
+        <label for="interests">Interests:</label>
+        <input type="checkbox" name="interests" id="game" value="Game">
+        <label for="game">Play Game!</label>
+        <input type="checkbox" name="interests" id="comic" value="Comic">
+        <label for="comic">Read Comic!</label>
+        <input type="checkbox" name="interests" id="sleep" value="Sleep">
+        <label for="sleep">Sleep!</label>
+        <hr>
+
+        <label for="country">Country:</label>
+        <select name="country" id="country">
+            <option value="Thailand">Thailand</option>
+            <option value="China">China</option>
+            <option value="England">England</option>
+            <option value="Italy">Italy</option>
+        </select>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <!-- Result will be displayed here -->
+    <div id="result"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const form = document.getElementById("regisForm");
+            const resultDiv = document.getElementById("result");
+
+            form.addEventListener("submit", (e) => {
+                e.preventDefault();
+
+                const name = form.elements["name"].value;
+                const gender = form.querySelector(`input[name='gender']:checked`).value;
+                const interests = Array.from(form.querySelectorAll(`input[name='interests']:checked`)).map(checkbox => checkbox.value);
+                const country = form.elements["country"].value;
+
+                console.log(interests);
+                resultDiv.innerHTML =
+                    `<p>Name: ${name}</p>
+                    <p>Gender: ${gender}</p>
+                    <p>Interests: ${interests.join(", ")}</p>
+                    <p>Country: ${country}</p>`;
+            });
+        });
+    </script>
+</body>
+
+</html>

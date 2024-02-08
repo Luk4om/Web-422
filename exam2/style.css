@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@100&family=Prompt:wght@200&display=swap");
+body {
+  font-family: "Kanit", sans-serif;
+  font-family: "Prompt", sans-serif;
+  background-color: #f4f4f4;
+}
+
+nav {
+  max-width: 800px;
+  margin: 20px auto;
+  background-color: #2dc3c9;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.login {
+  justify-content: space-between;
+}
+
+.welcome {
+  background: #ffffff;
+  border-radius: 20px;
+  font-size: 24px;
+  padding-left: 38%;
+}
+
+.login_input--user {
+  color: #000000;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.login_input--psw {
+  color: #000000;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.login.btn {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.login.btn:hover {
+  background-color: #45a049;
+}
